@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grayish: hsl(211, 68%, 94%);
+  --light-grayish2: hwb(205 87% 7%);
+  --gayish: hsl(219, 14%, 63%);
+  --dark-grayish: hsl(219, 12%, 42%);
+  --very-dark: hsl(224, 21%, 14%);
+  --blue: hsl(219, 85%, 26%);
+  --red: hsl(1, 90%, 64%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+}
+
+.body {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.content {
+  max-width: 1440px;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mark button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  color: var(--gayish);
+}
+
+.mark button:hover {
+  cursor: pointer;
+  color: var(--blue);
+  transition: color 0.5s;
+}
+
+.unreadCount {
+  background-color: var(--blue);
+  color: var(--white);
+  width: 30px;
+  height: 100%;
+  display: flex;
+  border-radius: 7px;
+}
+
+.unreadCount p {
+  margin: 0 auto;
+}
+
+.details-description {
+  padding-top: 5px;
+}
+
+.notifications {
+  margin-top: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification {
+  display: flex;
+  padding-top: 3pm;
+  padding: 15px;
+  gap: 10px;
+  align-items: start;
+  line-height: 19px;
+}
+
+.unread {
+  background-color: var(--light-grayish);
+  border-radius: 10px;
+}
+
+.picture {
+  display: flex;
+  align-items: start;
+  width: 60px;
+  height: 60px;
+  gap: 10px;
+}
+
+.details {
+  width: 100%;
+}
+
+#post-link {
+  color: var(--dark-grayish);
+  font-weight: bold;
+  text-decoration: none;
+  outline: none;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.action {
+  color: var(--gayish);
+}
+
+.time {
+  color: var(--gayish);
+}
+
+.text {
+  border: 1px solid var(--gayish);
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  color: var(--dark-grayish);
+}
+
+.text:hover {
+  background-color: var(--light-grayish);
+  border: 1px solid var(--white);
+}
+
+#group-link {
+  color: var(--blue);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.unread .details-description::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  text-align: center;
+  background-color: var(--red);
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 375px) {
+  .content {
+    padding: 1rem;
+  }
+}
