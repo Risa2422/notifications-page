@@ -102,7 +102,7 @@ header {
 }
 
 .unread {
-  background-color: var(--color-l-grayish-blue-1);
+  background-color: var(--color-vl-grayish-blue);
   border-radius: 10px;
 }
 
