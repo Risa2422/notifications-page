@@ -54,6 +54,7 @@ header {
 }
 
 .title h3 {
+  color: var(--very-dark);
   font-size: 1.5rem;
 }
 
@@ -111,18 +112,34 @@ header {
 }
 
 .details {
+  flex: 1;
   line-height: 1.5;
 }
 
-#post-link {
+.post-picture {
+  flex: 0 0 45px;
+}
+
+.post-link {
   color: var(--dark-grayish);
   font-weight: bold;
   text-decoration: none;
-  outline: none;
+  transition: all .3s ease-in-out;
+}
+
+.post-link:hover {
+  color: var(--blue);
 }
 
 .name {
+  color: var(--very-dark);
   font-weight: bold;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.name:hover {
+  color: var(--blue);
 }
 
 .action {
@@ -144,10 +161,11 @@ header {
 
 .text:hover {
   background-color: var(--light-grayish);
+  cursor: pointer;
   border: 1px solid var(--white);
 }
 
-#group-link {
+.group-link {
   color: var(--blue);
   font-weight: bold;
   text-decoration: none;
