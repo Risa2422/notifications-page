@@ -2,11 +2,14 @@
 
 :root {
   --white: hsl(0, 0%, 100%);
-  --light-grayish: hsl(211, 68%, 94%);
+  --white-lilac: #F9FAFD;
+  --light-grayish: #F6FAFC;
   --light-grayish2: hwb(205 87% 7%);
-  --gayish: hsl(219, 14%, 63%);
+  --gayish: #E2E4E6; /* gayish? */
   --dark-grayish: hsl(219, 12%, 42%);
+  --gallery: #EEEEEE;
   --very-dark: hsl(224, 21%, 14%);
+  --manatee: #9A9CA2;
   --blue: hsl(219, 85%, 26%);
   --red: hsl(1, 90%, 64%);
 }
@@ -22,16 +25,20 @@ img {
   width: auto;
 }
 
-.body {
+body {
+  background-color: var(--white-lilac);
   font-size: 16px;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .content {
-  max-width: 1440px;
+  max-width: 730px;
   width: 100%;
   margin: 1rem auto;
-  padding: 1.5rem;
+  padding: 2rem 2rem 0;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 0 20px 0 var(--gallery);
 }
 
 header {
@@ -43,7 +50,11 @@ header {
 .title {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 14px;
+}
+
+.title h3 {
+  font-size: 1.5rem;
 }
 
 .mark button {
@@ -53,7 +64,8 @@ header {
   outline: none;
   padding: 0;
   appearance: none;
-  color: var(--gayish);
+  color: var(--dark-grayish);
+  font-size: 1rem;
 }
 
 .mark button:hover {
@@ -65,32 +77,24 @@ header {
 .unreadCount {
   background-color: var(--blue);
   color: var(--white);
-  width: 30px;
-  height: 100%;
-  display: flex;
   border-radius: 7px;
 }
 
 .unreadCount p {
-  margin: 0 auto;
-}
-
-.details-description {
-  padding-top: 5px;
+  padding: 2px 11px;
 }
 
 .notifications {
-  margin-top: 1rem;
-  gap: 1rem;
+  margin-top: 2rem;
+  gap: .5rem;
   display: flex;
   flex-direction: column;
 }
 
 .notification {
   display: flex;
-  padding-top: 3pm;
-  padding: 15px;
-  gap: 10px;
+  padding: 1rem 1.2rem;
+  gap: 1rem;
   align-items: start;
   line-height: 19px;
 }
@@ -103,13 +107,11 @@ header {
 .picture {
   display: flex;
   align-items: start;
-  width: 60px;
-  height: 60px;
-  gap: 10px;
+  flex: 0 0 45px;
 }
 
 .details {
-  width: 100%;
+  line-height: 1.5;
 }
 
 #post-link {
@@ -124,19 +126,20 @@ header {
 }
 
 .action {
-  color: var(--gayish);
+  color: var(--dark-grayish);
 }
 
 .time {
-  color: var(--gayish);
+  color: var(--manatee);
 }
 
 .text {
   border: 1px solid var(--gayish);
   border-radius: 5px;
-  margin: 1rem;
-  padding: 1rem;
+  margin: .75rem 0 .2rem;
+  padding: 1rem 1.3rem;
   color: var(--dark-grayish);
+  line-height: 1.3;
 }
 
 .text:hover {
@@ -153,11 +156,13 @@ header {
 .unread .details-description::after {
   content: "";
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   text-align: center;
   background-color: var(--red);
   border-radius: 50%;
+  position: relative;
+  top: -1px;
 }
 
 @media screen and (max-width: 375px) {
