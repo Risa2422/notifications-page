@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
-  --white: hsl(0, 0%, 100%);
-  --light-grayish: hsl(211, 68%, 94%);
-  --light-grayish2: hwb(205 87% 7%);
-  --gayish: hsl(219, 14%, 63%);
-  --dark-grayish: hsl(219, 12%, 42%);
-  --very-dark: hsl(224, 21%, 14%);
-  --blue: hsl(219, 85%, 26%);
-  --red: hsl(1, 90%, 64%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-vl-grayish-blue: hsl(210, 60%, 98%);
+  --color-l-grayish-blue-1: hsl(211, 68%, 94%);
+  --color-l-grayish-blue-2: hsl(205, 33%, 90%);
+  --color-grayish-blue: hsl(219, 14%, 63%);
+  --color-d-grayish-blue: hsl(219, 12%, 42%);
+  --color-vd-blue: hsl(224, 21%, 14%);
+  --color-blue: hsl(219, 85%, 26%);
+  --color-red: hsl(1, 90%, 64%);
 }
 
 * {
@@ -22,16 +23,17 @@ img {
   width: auto;
 }
 
-.body {
+body {
+  background-color: var(--color-vl-grayish-blue);
   font-size: 16px;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .content {
-  max-width: 1440px;
+  max-width: 730px;
   width: 100%;
-  margin: 1rem auto;
-  padding: 1.5rem;
+  padding: 2rem 1rem;
+  background-color: var(--color-white);
 }
 
 header {
@@ -43,7 +45,12 @@ header {
 .title {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 14px;
+}
+
+.title h3 {
+  color: var(--color-vd-blue);
+  font-size: 1.5rem;
 }
 
 .mark button {
@@ -53,99 +60,113 @@ header {
   outline: none;
   padding: 0;
   appearance: none;
-  color: var(--gayish);
+  color: var(--color-d-grayish-blue);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
 }
 
 .mark button:hover {
   cursor: pointer;
-  color: var(--blue);
+  color: var(--color-blue);
   transition: color 0.5s;
 }
 
 .unreadCount {
-  background-color: var(--blue);
-  color: var(--white);
-  width: 30px;
-  height: 100%;
-  display: flex;
+  background-color: var(--color-blue);
+  color: var(--color-white);
   border-radius: 7px;
 }
 
 .unreadCount p {
-  margin: 0 auto;
-}
-
-.details-description {
-  padding-top: 5px;
+  padding: 3px 12px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .notifications {
-  margin-top: 1rem;
-  gap: 1rem;
+  margin-top: 2rem;
+  gap: .5rem;
   display: flex;
   flex-direction: column;
 }
 
 .notification {
   display: flex;
-  padding-top: 3pm;
-  padding: 15px;
-  gap: 10px;
+  padding: 1rem 1.2rem;
+  gap: 1rem;
   align-items: start;
   line-height: 19px;
 }
 
 .unread {
-  background-color: var(--light-grayish);
+  background-color: var(--color-vl-grayish-blue);
   border-radius: 10px;
 }
 
 .picture {
   display: flex;
   align-items: start;
-  width: 60px;
-  height: 60px;
-  gap: 10px;
+  flex: 0 0 45px;
 }
 
 .details {
-  width: 100%;
+  flex: 1;
+  line-height: 1.5;
 }
 
-#post-link {
-  color: var(--dark-grayish);
+.post-picture {
+  flex: 0 0 45px;
+}
+
+.post-link {
+  color: var(--color-d-grayish-blue);
   font-weight: bold;
   text-decoration: none;
-  outline: none;
+  transition: all .3s ease-in-out;
+}
+
+.post-link:hover {
+  color: var(--color-blue);
 }
 
 .name {
+  color: var(--color-vd-blue);
   font-weight: bold;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.name:hover {
+  color: var(--color-blue);
 }
 
 .action {
-  color: var(--gayish);
+  margin: 0 3px;
+  color: var(--color-d-grayish-blue);
 }
 
 .time {
-  color: var(--gayish);
+  color: var(--color-grayish-blue);
 }
 
 .text {
-  border: 1px solid var(--gayish);
+  border: 1px solid var(--color-l-grayish-blue-2);
   border-radius: 5px;
-  margin: 1rem;
-  padding: 1rem;
-  color: var(--dark-grayish);
+  margin: .75rem 0 .2rem;
+  padding: 1rem 1.3rem;
+  color: var(--color-d-grayish-blue);
+  line-height: 1.3;
+  transition: all .3s ease-in-out;
 }
 
 .text:hover {
-  background-color: var(--light-grayish);
-  border: 1px solid var(--white);
+  background-color: var(--color-vl-grayish-blue);
+  cursor: pointer;
+  border: 1px solid var(--color-vl-grayish-blue);
 }
 
-#group-link {
-  color: var(--blue);
+.group-link {
+  color: var(--color-blue);
   font-weight: bold;
   text-decoration: none;
 }
@@ -153,15 +174,21 @@ header {
 .unread .details-description::after {
   content: "";
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   text-align: center;
-  background-color: var(--red);
+  background-color: var(--color-red);
   border-radius: 50%;
+  position: relative;
+  top: -1px;
+  left: 2px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 767px) {
   .content {
-    padding: 1rem;
+    margin: 1rem auto;
+    padding: 2rem 2rem 0;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 var(--color-l-grayish-blue-1);
   }
 }
